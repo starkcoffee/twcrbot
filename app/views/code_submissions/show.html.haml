@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Applicant name:
+  = @code_submission.applicant_name
+%p
+  %b Language:
+  = @code_submission.language
+%p
+  %b Problem:
+  = @code_submission.problem
+
+= link_to 'Edit', edit_code_submission_path(@code_submission)
+\|
+= link_to 'Back', code_submissions_path

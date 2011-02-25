@@ -1,0 +1,23 @@
+%h1 Listing code_submissions
+
+%table
+  %tr
+    %th Applicant name
+    %th Language
+    %th Problem
+    %th
+    %th
+    %th
+
+  - @code_submissions.each do |code_submission|
+    %tr
+      %td= code_submission.applicant_name
+      %td= code_submission.language
+      %td= code_submission.problem
+      %td= link_to 'Show', code_submission
+      %td= link_to 'Edit', edit_code_submission_path(code_submission)
+      %td= link_to 'Destroy', code_submission, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Code submission', new_code_submission_path

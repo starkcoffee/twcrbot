@@ -30,4 +30,9 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 #   gem 'webrat'
 # end
 #
-gem 'haml'
+group :development do
+    gem 'haml'
+    gem 'haml-rails'
+end
+
+
