@@ -2,6 +2,7 @@ Feature: Recruiter can upload candidate's solution to coding exercise
 
 Scenario: Candidate's solution to coding exercise is successfully uploaded by recruiter
 
+    Given Deepa is on the code submission page
     When Deepa posts a code submission with the following details
     | language | ruby |
     | problem  | trains |

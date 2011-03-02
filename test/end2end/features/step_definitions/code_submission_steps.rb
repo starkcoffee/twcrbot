@@ -1,6 +1,11 @@
 Given /^there is a new code submission to be reviewed$/ do
 end
 
+Given /\w+ is on the code submission page/ do
+    browse_to '/code_submissions/new'
+
+end
+
 When /^(\w+) posts a code submission with the following details$/ do |recruiter, table|
   details = table.rows_hash
 

@@ -1,14 +1,19 @@
 require 'yaml'
 
-raise "Please set SOLUBLE_ENVIRONMENT" unless ENV['SOLUBLE_ENVIRONMENT']
-
 module Soluble
-  path = File.dirname(__FILE__)+"/../conf/#{ENV['SOLUBLE_ENVIRONMENT']}.yml"
-  @environment = YAML.load(File.read(path))
 
-  def self.environment key
-    @environment[key] || {}
-  end
+      
+    module Config 
+        raise "Please set SOLUBLE_ENVIRONMENT" unless ENV['SOLUBLE_ENVIRONMENT']
+        path = File.dirname(__FILE__)+"/../conf/#{ENV['SOLUBLE_ENVIRONMENT']}.yml"
+        @config = YAML.load(File.read(path))
+
+        def self.[] key
+            @config[key]
+        end
+      
+    end
+
 
   def classify symbol
     symbol.to_s.split('_').map{|part| part.capitalize}.join
@@ -27,8 +32,10 @@ module Soluble
     load "soluble/pages/#{app}/#{page}_page.rb"    
   end
 
-  def browse_to app
-    $browser.goto Soluble.environment(app)['base_url']
+  def browse_to path
+    base_url = Config['base_url'] 
+    base_url.chop! if base_url =~ /\/$/
+    $browser.goto base_url + path
   end
 end
 
