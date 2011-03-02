@@ -1,4 +1,6 @@
 class CodeSubmissionsController < ApplicationController
+  before_filter :authenticate_with_cas
+
   # GET /code_submissions
   # GET /code_submissions.xml
   def index
