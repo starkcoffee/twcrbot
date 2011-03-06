@@ -1,5 +1,6 @@
 class Reviewer < ActiveRecord::Base
   has_and_belongs_to_many :code_submissions
+  validates_presence_of :username
   
   def self.find_or_create params 
     reviewer = Reviewer.find_by_username params[:username] 

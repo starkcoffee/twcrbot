@@ -2,6 +2,13 @@ require 'spec_helper'
 
 describe Reviewer do
   
+  [:username].each do |field|
+    it "should be invalid without #{field}" do
+      reviewer = Reviewer.make(field => nil)
+      reviewer.should_not be_valid
+    end
+  end
+  
   describe "find_or_create" do
     it "should return a reviewer if one exists" do
       Reviewer.make(:username => 'duana').save!
