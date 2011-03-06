@@ -44,6 +44,8 @@ class CodeSubmissionsController < ApplicationController
   def create
     @code_submission = CodeSubmission.new(params[:code_submission])
 
+    @code_submission.reviewers << Reviewer.find_or_create(:username => params[:reviewers])
+
     respond_to do |format|
       if @code_submission.save
         format.html { redirect_to(@code_submission, :notice => 'Code submission was successfully created.') }

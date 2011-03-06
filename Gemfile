@@ -9,3 +9,7 @@ gem 'omniauth'
 group :production do
   gem 'pg'
 end
+group :test, :development do
+  gem 'rspec-rails', '2.4.1'
+  gem 'machinist', '>= 2.0.0.beta2'
+end
