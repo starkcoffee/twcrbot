@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110306105833) do
+ActiveRecord::Schema.define(:version => 20110306042929) do
 
   create_table "code_submissions", :force => true do |t|
     t.string   "applicant_name"
@@ -20,14 +20,15 @@ ActiveRecord::Schema.define(:version => 20110306105833) do
     t.datetime "updated_at"
   end
 
-  create_table "sessions", :force => true do |t|
-    t.string   "session_id", :null => false
-    t.text     "data"
+  create_table "code_submissions_reviewers", :id => false, :force => true do |t|
+    t.integer "code_submission_id"
+    t.integer "reviewer_id"
+  end
+
+  create_table "reviewers", :force => true do |t|
+    t.string   "username"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
-  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
 end
