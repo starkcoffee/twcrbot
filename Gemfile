@@ -5,6 +5,8 @@ gem 'sqlite3'
 gem 'haml'
 gem 'haml-rails'
 gem 'omniauth'
+gem 'paperclip'
+gem 'aws-s3'
 
 group :production do
   gem 'pg'
