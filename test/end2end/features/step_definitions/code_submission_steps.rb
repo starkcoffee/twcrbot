@@ -12,7 +12,7 @@ When /^(\w+) posts a code submission with the following details$/ do |recruiter,
   params = { 
       :code_submission_language => details['language'],
       :code_submission_problem => details['problem'],
-      :code_submission_applicant_name => details['applicant_name'],
+      :code_submission_applicant_name => details['applicant name'],
    }
 
   on_page :app, :code_submission do |page|

@@ -15,7 +15,7 @@ Scenario: Code submitted by recruiter and code review is submitted by a dev
     When Deepa posts a code submission with the following details
         | language | ruby |
         | problem  | trains |
-        | candidate name | Mark Ryall |
+        | applicant name | Mark Ryall |
 
     And invites the following devs to do a review using their usernames
         | jottaway |
