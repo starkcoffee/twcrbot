@@ -1,7 +1,7 @@
 Feature:
     Allow a code submission to be uploaded and the code reviews to be submitted for it online
 
-@wip
+
 Scenario: Code submitted by recruiter and code review is submitted by a dev
 
     Deepa is the awesome recruiter
@@ -9,9 +9,9 @@ Scenario: Code submitted by recruiter and code review is submitted by a dev
     Duana is another aweseom dev
     Mark is a dubious candidate
 
-    Given there is a new code submission to be reviewed
-    Given James is logged in with username jottaway
-    Given Deepa is logged in with username deepa
+    --Given James is logged in with username jottaway
+    --Given Deepa is logged in with username deepa
+    Given Deepa is on the code submission page
     When Deepa posts a code submission with the following details
         | language | ruby |
         | problem  | trains |

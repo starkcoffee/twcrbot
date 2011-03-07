@@ -15,5 +15,11 @@
   .field
     = f.label :problem
     = f.select :problem, problems
+  .field
+    = label_tag :reviewers, "Reviewers"
+    = text_field_tag :reviewers
+    (comma separated list of usernames)
   .actions
     = f.submit 'Save'
+
+

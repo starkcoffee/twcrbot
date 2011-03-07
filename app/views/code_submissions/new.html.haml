@@ -1,5 +1,27 @@
 %h1 New code_submission
 
-= render 'form'
+= form_for @code_submission do |f|
+  -if @code_submission.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@code_submission.errors.count, "error")} prohibited this code_submission from being saved:"
+      %ul
+        - @code_submission.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :applicant_name
+    = f.text_field :applicant_name
+  .field
+    = f.label :language
+    = f.select :language, languages
+  .field
+    = f.label :problem
+    = f.select :problem, problems
+  .field
+    = label_tag :reviewers, "Reviewers"
+    = text_field_tag :reviewers
+    (comma separated list of usernames)
+  .actions
+    = f.submit 'Save'
 
 = link_to 'Back', code_submissions_path
