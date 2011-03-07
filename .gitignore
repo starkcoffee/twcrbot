@@ -4,3 +4,4 @@ log/*.log
 tmp/**/*
 foo.rb
 ideas.tx
+config/s3.yml

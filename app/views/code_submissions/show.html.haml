@@ -9,6 +9,8 @@
 %p
   %b Problem:
   = @code_submission.problem
+%p
+  = link_to 'Download code', @code_submission.code.url
 
 = link_to 'Edit', edit_code_submission_path(@code_submission)
 \|

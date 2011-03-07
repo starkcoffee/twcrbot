@@ -1,4 +1,4 @@
-= form_for @code_submission do |f|
+= form_for @code_submission, :html => {:multipart => true} do |f|
   -if @code_submission.errors.any?
     #error_explanation
       %h2= "#{pluralize(@code_submission.errors.count, "error")} prohibited this code_submission from being saved:"
@@ -15,6 +15,9 @@
   .field
     = f.label :problem
     = f.select :problem, problems
+  .field
+    = f.label :code
+    = f.file_field :code
   .field
     = label_tag :reviewers, "Reviewers"
     = text_field_tag :reviewers

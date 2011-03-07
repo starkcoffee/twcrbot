@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110306105833) do
+ActiveRecord::Schema.define(:version => 20110307072833) do
 
   create_table "code_submissions", :force => true do |t|
     t.string   "applicant_name"
@@ -18,6 +18,10 @@ ActiveRecord::Schema.define(:version => 20110306105833) do
     t.string   "problem"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "code_file_name"
+    t.string   "code_content_type"
+    t.integer  "code_file_size"
+    t.datetime "code_updated_at"
   end
 
   create_table "code_submissions_reviewers", :id => false, :force => true do |t|
