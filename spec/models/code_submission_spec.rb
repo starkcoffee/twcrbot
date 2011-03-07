@@ -12,7 +12,6 @@ describe CodeSubmission do
   it "can have no reviewers against it" do
     code_submission = CodeSubmission.make
     code_submission.reviewers.should be_empty
-    p code_submission.inspect
     code_submission.should be_valid 
   end
 end
